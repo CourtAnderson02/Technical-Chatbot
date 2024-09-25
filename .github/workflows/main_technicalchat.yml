@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'TechnicalChat'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B3CB3E7604F64ACDB560A9126E94DC24 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A65BEF9C3BD348938693EE4886AB24B0 }}
