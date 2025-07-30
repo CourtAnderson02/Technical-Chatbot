@@ -1,0 +1,27 @@
+from importlib.metadata import version
+
+pkgs = [
+    "tiktoken",    # Tokenizer
+    "torch",       # Deep learning library
+]
+for p in pkgs:
+    print(f"{p} version: {version(p)}")
+
+
+from pathlib import Path
+
+finetuned_model_path = Path("gpt2-medium355M-sft.pth")
+if not finetuned_model_path.exists():
+    print(
+        f"Could not find '{finetuned_model_path}'.\n"
+        "Run the `ch07.ipynb` notebook to finetune and save the finetuned model."
+    )
+from previous_chapters import GPTModel
+
+
+BASE_CONFIG = {
+    "vocab_size": 50257,     # Vocabulary size
+    "context_length": 1024,  # Context length
+    "drop_rate": 0.0,        # Dropout rate
+    "qkv_bias": True         # Query-key-value bias
+
